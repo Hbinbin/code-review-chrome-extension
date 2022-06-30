@@ -72,6 +72,11 @@ const cssModuleRegex = /\.module\.css$/
 const sassRegex = /\.(scss|sass)$/
 const sassModuleRegex = /\.module\.(scss|sass)$/
 
+// 自动解析模块路径
+const resolvePath = function (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
     return false
@@ -318,7 +323,8 @@ module.exports = function (webpackEnv) {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling'
         }),
-        ...(modules.webpackAliases || {})
+        ...(modules.webpackAliases || {}),
+        '@cps': resolvePath('/src/components/index')
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
