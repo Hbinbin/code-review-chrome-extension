@@ -1,0 +1,59 @@
+$prefix-cls: "color-picker-value";
+
+.#{$prefix-cls} {
+    @apply h-5 px-3 mb-3;
+    // 覆盖Select组件样式
+    .ls-select-focused:not(.ls-select-disabled).ls-select:not(.ls-select-customize-input) .ls-select-selector {
+        box-shadow: none;
+        border-right-width: 0px !important;
+    }
+    .ls-select {
+        .ls-select-selector {
+            @apply w-20 h-5 bg-gray-800 border-none text-font-p text-xs #{!important};
+            .ls-select-selection-search {
+                input {
+                    @apply h-5;
+                }
+            }
+            .ls-select-selection-item {
+                @apply h-5 leading-5  text-xs;
+            }
+        }
+        .ls-select-arrow {
+            @apply text-font-p text-xs;
+        }
+    }
+    .ls-input-number {
+        @apply w-10 h-5 border-none ml-1;
+        &:hover {
+            @apply border-none;
+        }
+        &.ls-input-number-focused {
+            box-shadow: none;
+        }
+        input {
+            @apply h-5 px-2 bg-gray-400 text-font-p text-sm border-none rounded-none;
+        }
+        .ls-input-number-handler-wrap {
+            display: none;
+        }
+        &.color-picker-value-alpha {
+            input {
+                @apply bg-gray-800 px-1;
+            }
+        }
+    }
+    .#{$prefix-cls}-hex {
+        width: 120px;
+        @apply h-5 bg-gray-400 text-font-p border-none;
+    }
+}
+.#{$prefix-cls}-dropdown {
+    @apply bg-gray-800 #{!important};
+    .ls-select-item-option-active:not(.ls-select-item-option-disabled) {
+        @apply bg-gray-400 #{!important};
+    }
+    .ls-select-item-option-selected:not(.ls-select-item-option-disabled) {
+        @apply bg-gray-400 #{!important};
+    }
+}

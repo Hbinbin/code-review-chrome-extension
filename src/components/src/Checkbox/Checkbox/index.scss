@@ -1,0 +1,17 @@
+$prefix-cls: "tool-component-checkbox";
+
+.#{$prefix-cls} {
+    input:checked + div {
+        @apply bg-primary;
+        @apply border-none;
+    }
+    input:disabled {
+        cursor: not-allowed;
+        & + div {
+            @apply bg-gray-300;
+        }
+    }
+    input:checked + div svg {
+        @apply block;
+    }
+}

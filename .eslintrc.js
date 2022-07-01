@@ -25,5 +25,7 @@ module.exports = {
         // 'jsx-a11y',
         '@typescript-eslint',
     ],
-    rules: {},
+    rules: {
+        'prettier/prettier': ['error', { singleQuote: true, semi: false }],
+    },
 }
