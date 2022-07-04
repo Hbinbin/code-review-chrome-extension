@@ -5,6 +5,6 @@ import './index.scss'
 interface IProps {}
 
 const Popup: FC<IProps> = () => {
-    return <Container className='popup'></Container>
+  return <div className='popup-container'>Popup</div>
 }
 export default Popup

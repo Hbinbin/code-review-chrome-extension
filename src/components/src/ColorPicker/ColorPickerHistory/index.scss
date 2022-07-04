@@ -1,8 +1,0 @@
-$prefix-cls: "color-picker-history";
-
-.#{$prefix-cls} {
-    @apply flex px-3;
-    .#{$prefix-cls}-item {
-        @apply w-5 h-5 rounded-sm mr-1;
-    }
-}
