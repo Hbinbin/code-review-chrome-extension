@@ -1,1 +1,1 @@
-export * from './gitlab.api'
+export * from './gitLab.api'
